@@ -1,4 +1,5 @@
 
+// predefined article categories
 
 export const categories=[
     'business',

@@ -11,11 +11,11 @@ const Categories = () => {
         await getArticlesByFilter('category', categorie)
         navigate('/')
     }
-  
+  // this component maps predifined categories, on click articleList updates the categories in global state
   return (
     <div className="categories-container">
       <ul>
-        {Array.isArray(categories)  ? categories.map((categorie, index)=>{
+        {Array.isArray(categories)  ? categories.map((categorie, index)=>{ 
           return  <li onClick={()=>handleCategorie(categorie)} key={index}>{categorie}</li>
         })
           : null

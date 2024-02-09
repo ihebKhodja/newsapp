@@ -32,6 +32,7 @@
     font-size: 14rem;
     &:hover {
       transform: scale(1.2);
+      color: v.$orange;
       transition: ease-in-out 0.3s;
     }
   }

@@ -1,9 +1,9 @@
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
+import { ArticlesContextProvider } from './contexts/ArticlesContext'
 import './App.scss'
 import Home from './pages/Home'
 import Article from './pages/Article'
 import NotFound from './pages/NotFound'
-import { ArticlesContextProvider } from './contexts/ArticlesContext'
 import Navbar from './components/Navbar'
 import Categories from './components/Categories'
 import Search from './components/Search'
@@ -13,7 +13,7 @@ function App() {
   return (
   <div className='app'>
       <Router>
-        <ArticlesContextProvider>
+        <ArticlesContextProvider> 
           <Navbar />
           <Categories />
           <Search />

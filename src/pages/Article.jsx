@@ -4,7 +4,7 @@ const Article = () => {
   const location = useLocation();
   const { data } = location.state || {}; // Access data passed through state
   let ts = new Date(data.published_at); // converting timeStamp format to Date 
-    const imageUrl = data.urlToImage || 'https://via.placeholder.com/150'; // in case imageurl is null
+  const imageUrl = data.urlToImage || 'https://via.placeholder.com/150'; // in case imageurl is null from database
 
   return (
     <div className='article'>
@@ -15,11 +15,10 @@ const Article = () => {
         </div>
         <img  src={imageUrl} />
         <div className='content'>
-        <p > <b>Source :</b> {data.source?.name ?? data.source }</p>
-        <p>{data.author}</p>
+        {/* in case the data is fetched from proxy api source object has { id , name}  */}
+        <p > <b>Source :</b> {data.source?.name ?? data.source }</p>   
           <p>{data.description }</p>
-          {/* <p>{data.content }</p> */}
-          <p> <a href={data.url} target='blank'>Read More</a> </p>
+          <p> <a href={data.url} target='blank'>Read More</a> </p> {/*  link to the original article webpage*/}
         </div>
     </div>
   )

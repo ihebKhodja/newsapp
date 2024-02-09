@@ -6,7 +6,7 @@ const ArticleItem = ({data}) => {
 
     let navigate = useNavigate();
      const handleClick= ()=>{
-        navigate('/article',{state:{data}})
+        navigate('/article',{state:{data}}) // passing article data as a state to the article component 
     }
     const imageUrl = data.urlToImage || 'https://via.placeholder.com/150';
 
@@ -15,10 +15,6 @@ const ArticleItem = ({data}) => {
             <img  src={imageUrl} />
             <div className='content'>
                 <p>{data.title}</p>
-                {/* <h3>{data.author}</h3> */}
-                {/* <p>{data.source?.name ?? 'Default or No Source'}</p> */}
-                {/* <p>{data.description}</p> */}
-                {/* <button >Full Article</button> */}
             </div>
         </div>
        

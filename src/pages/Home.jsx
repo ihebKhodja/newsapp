@@ -4,7 +4,6 @@ import { ArticlesContext } from '../contexts/ArticlesContext'
 import ArticleList from '../components/ArticleList'
 import Pagination from '../components/Pagination'
 
-
 const Home = () => {
     const [loading, setLoading]=useState(true)
     const {getArticles}=useArticles()
@@ -14,25 +13,33 @@ const Home = () => {
     
     useEffect(() => {
         const fetchArticles = async () => {
+            setLoading(true);
+            
+            if(state.category ==='Top headlines')
                 await getArticles(); // Assuming getArticles is an async operation
+            setTimeout(() => {
                 setLoading(false);
-        };
-        fetchArticles();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+            }, 500)
 
-    // Pagination logic 
+            setCurrentPage(1)
+        }
+        fetchArticles();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [state.category]);
+
+    /// ## Pagination logic 
     // getting the current articles forn each page
     const indexOfLastArticle=currentPage * articlesPerPage;
     const indexOfFirstArticle= indexOfLastArticle - articlesPerPage;
     const currentArticles = state.articlesList.slice(indexOfFirstArticle, indexOfLastArticle)
-    // 
-    const paginate= (pageNumber)=> setCurrentPage(pageNumber)
+    // paginate funcition 
+    const paginate= (pageNumber)=> setCurrentPage(pageNumber) 
 
   return (
     
     <div className='wrapper'>
-    {
+    { // conditional rendering 
         loading ? <div className="loader"></div>
 
         :

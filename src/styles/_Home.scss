@@ -34,7 +34,7 @@
         minmax(10rem, 1fr)
       ); /* Adjust the min and max widths as needed */
       // grid-template-columns: 1fr;
-      gap: 20px; /* Adjust the space between cards */
+      gap: 1rem; /* Adjust the space between cards */
       padding: 20px;
     }
   }
@@ -48,4 +48,8 @@
   border-color: #000 #0000;
   animation: l1 1s infinite;
 }
-@keyframes l1 {to{transform: rotate(.5turn)}}
+@keyframes l1 {
+  to {
+    transform: rotate(1turn);
+  }
+}
