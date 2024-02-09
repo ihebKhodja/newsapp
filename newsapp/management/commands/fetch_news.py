@@ -14,7 +14,6 @@ class Command(BaseCommand):
         params = {
             'language':'en',
             'apiKey': api_key,
-            'pageSize':40
         }   
         response = requests.get(url, params=params)
         news_data = response.json()

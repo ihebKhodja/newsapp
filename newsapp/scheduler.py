@@ -5,8 +5,8 @@ from datetime import datetime
 
 def run_my_command():
     """Function to run the Django management command."""
-    #calling fetch_news management command
-    call_command('fetch_news')
+    #calling fetch_news management command 
+    call_command('fetch_news') 
 
 def start_scheduler():
     scheduler = BackgroundScheduler()

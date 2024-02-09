@@ -10,30 +10,30 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunSQL(
-            """
-            CREATE TABLE newsapp_newsarticle_parent (
-                id SERIAL PRIMARY KEY,
-                title VARCHAR(400),
-                author VARCHAR(400),
-                description TEXT,
-                url VARCHAR(1000),
-                published_at TIMESTAMP WITH TIME ZONE NOT NULL,
-                content TEXT,
-                urlToImage VARCHAR(1000),
-                source VARCHAR(100),
-                category VARCHAR(20),
-                CONSTRAINT published_at_check CHECK (published_at IS NOT NULL)
-            ) PARTITION BY RANGE (published_at);
-            """,
-            reverse_sql="DROP TABLE newsapp_newsarticle_parent;"
-        ),
-        # Example partition for 2023
-        migrations.RunSQL(
-            """
-            CREATE TABLE newsapp_newsarticle_parent PARTITION OF newsapp_newsarticle_parent
-            FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
-            """,
-            reverse_sql="DROP TABLE newsapp_newsarticle_parent;"
-        ),
+        # migrations.RunSQL(
+        #     """
+        #     CREATE TABLE newsapp_newsarticle_parent (
+        #         id SERIAL PRIMARY KEY,
+        #         title VARCHAR(400),
+        #         author VARCHAR(400),
+        #         description TEXT,
+        #         url VARCHAR(1000),
+        #         published_at TIMESTAMP WITH TIME ZONE NOT NULL,
+        #         content TEXT,
+        #         urlToImage VARCHAR(1000),
+        #         source VARCHAR(100),
+        #         category VARCHAR(20),
+        #         CONSTRAINT published_at_check CHECK (published_at IS NOT NULL)
+        #     ) PARTITION BY RANGE (published_at);
+        #     """,
+        #     reverse_sql="DROP TABLE newsapp_newsarticle_parent;"
+        # ),
+        # # Example partition for 2023
+        # migrations.RunSQL(
+        #     """
+        #     CREATE TABLE newsapp_newsarticle_parent PARTITION OF newsapp_newsarticle_parent
+        #     FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
+        #     """,
+        #     reverse_sql="DROP TABLE newsapp_newsarticle_parent;"
+        # ),
     ]
