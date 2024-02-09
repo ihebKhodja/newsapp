@@ -5,7 +5,7 @@ import ArticleList from '../components/ArticleList'
 import Pagination from '../components/Pagination'
 
 const Home = () => {
-    const [loading, setLoading]=useState(true)
+    const [loading, setLoading]=useState(null)
     const {getArticles}=useArticles()
     const {...state}=useContext(ArticlesContext)
     const [currentPage, setCurrentPage]=useState(1)
@@ -15,8 +15,9 @@ const Home = () => {
         const fetchArticles = async () => {
             setLoading(true);
             
-            if(state.category ==='Top headlines')
+            if(state.category =='Top headlines' || state.category =='')
                 await getArticles(); // Assuming getArticles is an async operation
+            
             setTimeout(() => {
                 setLoading(false);
             }, 500)

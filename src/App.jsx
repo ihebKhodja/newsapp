@@ -10,6 +10,8 @@ import Search from './components/Search'
 import Footer from './components/Footer'
 
 function App() {
+  // console.log(import.meta.env.VITE_API_URL)
+
   return (
   <div className='app'>
       <Router>

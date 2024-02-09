@@ -12,7 +12,7 @@ export const useArticles =()=>{
         
         const getArticles=async()=>{ // fetching all articles 
           try {
-                const response = await fetch('http://127.0.0.1:8000/api/articles/');
+                const response = await fetch(import.meta.env.VITE_API_URL);
                 const data = await response.json()
                     dispatch({type:'get_all', payload:{articlesList:data, 
                     'category':'Top headlines' // add this value for category to display in main page
@@ -23,7 +23,8 @@ export const useArticles =()=>{
         }
         const getArticlesByFilter =async(type, filter)=>{ // fetching data by filter category or query search
           try {
-                const url=`http://127.0.0.1:8000/api/articles/filter/?${type}=${filter}`
+                const url=`${import.meta.env.VITE_API_URL}filter/?${type}=${filter}`
+
                 const response = await fetch(url);
                 let data = await response.json();
 
