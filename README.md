@@ -15,9 +15,9 @@ Before you begin, ensure you have met the following requirements:
 
 - Python 3.8 or newer
 - pip and virtualenv
-- Request 
 - PostgreSQL installed and running
 - An API key from [NewsAPI.org](https://newsapi.org/)
+- Django Request library
 
 ## Installation
 
