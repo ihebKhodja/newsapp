@@ -1,0 +1,29 @@
+@use "./variables" as v;
+
+.card {
+  background-color: v.$gray;
+  border: 1px solid #d1d1d1;
+  width: 100%;
+  height: 18rem;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures the image and content fit within the card's rounded corners */
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    transform: scale(1.05);
+    transition: ease-in-out 0.3s;
+  }
+  img {
+    width: 100%; /* Ensures the image covers the full width of the card */
+    height: 60%; /* Keeps the image aspect ratio intact */
+    object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+  }
+  .content {
+    padding: 10px;
+    // margin-block: auto;
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}

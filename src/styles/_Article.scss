@@ -1,0 +1,73 @@
+@use "./variables" as v;
+.article {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-items: center; /* Align items at the start of the cross axis */
+  gap: 20px; /* Space between the image and the text content */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 20px; /* Space between articles if listed */
+
+  @media (max-width: 40em) {
+    width: 90%;
+  }
+  img {
+    width: 100%; /* Fixed width, adjust as needed */
+    max-height: 70vh; /* Fixed height, adjust as needed */
+    object-fit: contain; /* Ensure the image covers the area without distortion */
+    border-radius: 4px;
+  }
+  .info {
+    display: flex;
+    justify-content: start;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    p {
+      text-indent: 1rem;
+      width: 100%;
+      padding-top: 1rem;
+      text-align: left;
+      line-height: 1.5;
+    }
+    a {
+      font-weight: 600;
+      // text-decoration: none;
+      color: inherit;
+      &:hover {
+        color: v.$orange;
+      }
+    }
+  }
+}
+
+// .article div p {
+//   margin: 4px 0; /* Space between paragraphs */
+//   line-height: 1.4; /* Line height for readability */
+// }
+
+// .article div p:first-child {
+//   font-size: 18px; /* Larger font size for the title */
+//   // font-weight: bold; /* Make title bold */
+//   margin-bottom: 10px; /* More space below the title */
+// }
+
+// .article div p:nth-child(2) {
+//   font-size: 14px; /* Smaller font size for the source */
+//   color: #666; /* Lighter text color for less emphasis */
+// }
+
+// /* Style for descriptions */
+// .article div p:nth-child(3),
+// .article div p:nth-child(4) {
+//   font-size: 16px; /* Adjust as needed */
+// }

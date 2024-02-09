@@ -1,0 +1,18 @@
+@use "./variables" as v;
+nav {
+  padding: 0.5rem;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+  width: 100%;
+  border-bottom: 2px solid v.$black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: v.$black;
+    &:hover {
+      color: v.$orange;
+    }
+  }
+}

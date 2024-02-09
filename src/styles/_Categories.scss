@@ -1,0 +1,25 @@
+@use "./variables" as v;
+
+.categories-container {
+  padding: 0rem;
+  margin: 0.5rem;
+  ul {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    li {
+      list-style-type: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: v.$black;
+      padding: 0.7rem;
+      cursor: pointer;
+      &:hover {
+        color: v.$orange;
+        transition: ease-in-out 0.3s;
+      }
+      // border-bottom: 1px solid #ccc;
+    }
+  }
+}
