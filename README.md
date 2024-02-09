@@ -5,7 +5,6 @@
 
 - Dynamic News Article Display: Articles are fetched from the backend and displayed in a user-friendly forma
 - Article Categorization: Users can filter news articles based on categories such as technology, business, sports, etc
-- Responsive Design: The application is fully responsive, ensuring a seamless experience across various devices and screen sizes.
 - Search Functionality: Users can search for articles by keywords.
 
 
