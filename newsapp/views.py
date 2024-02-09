@@ -5,7 +5,9 @@ from rest_framework import status
 from .models import NewsArticle
 from .serializers import NewsArticleSerializer
 from django.utils.dateparse import parse_datetime
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 class LatestNewsView(APIView): ## retrieving all data 
 
@@ -18,8 +20,7 @@ class LatestNewsView(APIView): ## retrieving all data
 class FilteredNewsView(APIView): ## this view is used for both of query search and fetching data by category requested 
     def get(self, request, *args, **kwargs):
         
-        # api_key = '88e2672cfc52487a99d5fd92064fbfc9'
-        api_key='4fcfc0b7666d4d2a9e7c856768e591f3'
+        api_key=os.getenv('API_KEY')
         category = request.query_params.get('category')
         q = request.query_params.get('q')
 

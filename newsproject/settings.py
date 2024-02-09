@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,6 +27,9 @@ SECRET_KEY = 'django-insecure-jivxgpj)&ce*5_b2qtk)c3&cu9+9ygynghf94%zs_cx56*4&p9
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+# Load environment variables from .env file
+load_dotenv()
 
 CORS_ORIGIN_ALLOW_ALL = False  
 CORS_ALLOW_CREDENTIALS = True
@@ -84,10 +90,10 @@ WSGI_APPLICATION = 'newsproject.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'news_db',
-        'USER': 'postgres',
-        'PASSWORD': '12345',
-        'HOST': 'localhost', 
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
         'PORT': '5432',       
     }
 

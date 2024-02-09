@@ -1,6 +1,6 @@
 # NewsApp
 
-NewsApp is a Django-based project that serves as a proxy to the News API, allowing users to fetch the latest news based on categories, with a keyword search functionality. The project uses PostgreSQL as its database and Django Rest Framework for creating API endpoints.
+NewsApp is a Django-based project that serves as a proxy to the News API, allowing users to fetch the latest news , and based on categories, with a keyword search functionality. The project uses PostgreSQL as its database and Django Rest Framework for creating API endpoints.
 
 ## Features
 
